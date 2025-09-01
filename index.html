@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lô Mel - Pão de Mel Artesanal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFBF8; /* Um off-white suave */
+        }
+        /* Cor principal extraída da nova logo */
+        .bg-primary { background-color: #6a2a1a; } 
+        .text-primary { color: #6a2a1a; }
+        .border-primary { border-color: #6a2a1a; }
+        .hover-bg-primary-dark:hover { background-color: #582316; } /* Tom mais escuro para hover */
+        
+        .bg-secondary { background-color: #FFD700; } /* Amarelo Ouro mantido */
+        .text-secondary { color: #FFD700; }
+        .border-secondary { border-color: #FFD700; }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-primary shadow-md sticky top-0 z-10">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                 <!-- Logo agora é circular, com borda e mais integrada -->
+                 <img src="src/37A6C345-B1B7-42BC-A7E5-2B4FF8DE2478.jpg" alt="Logo da Lô Mel" class="h-24 w-24 rounded-full object-cover border-4 border-secondary shadow-lg">
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#produtos" class="text-white text-lg hover:text-secondary font-semibold">Produtos</a>
+                <a href="#precos" class="text-white text-lg hover:text-secondary font-semibold">Preços</a>
+                <a href="#contato" class="text-white text-lg hover:text-secondary font-semibold">Contato</a>
+            </nav>
+            <button class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto px-6 py-16 text-center">
+        <h2 class="text-4xl font-bold text-primary mb-4">Pães de mel artesanais, feitos para encantar em cada detalhe.</h2>
+        <p class="text-gray-600 text-xl mb-8">Produzido com ingredientes 100% naturais, ideal para presentear ou celebrar momentos especiais.</p>
+        <a href="#contato" class="bg-secondary text-primary font-bold py-3 px-8 rounded-full text-lg hover-bg-primary-dark hover:text-white transition duration-300">Faça sua Encomenda</a>
+    </section>
+
+    <!-- Products Section -->
+    <section id="produtos" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Nossos Produtos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Product Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="src/C71181B0-EDF2-48CD-B6FF-7F14916AB5C1.png" alt="Imagem de um pão de mel recheado com doce de leite" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary mb-2">Pão de Mel</h3>
+                        <p class="text-gray-700">O clássico, com recheio cremoso de doce de leite e cobertura de chocolate.</p>
+                    </div>
+                </div>
+                <!-- Product Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="src/96994563-f148-40d6-afdb-de8ea59c28a4.jpeg" alt="Imagem de um pão de mel com cobertura de chocolate branco" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary mb-2">Bem-Casado</h3>
+                        <p class="text-gray-700">A combinação perfeita de uma massa macia e delicada com o recheio cremoso de doce de leite, finalizada com o frescor das raspas de limão.</p>
+                    </div>
+                </div>
+                <!-- Product Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <img src="src/245DAA96-F96D-4857-AAC0-07E552138957.png" alt="Imagem de um pão de mel com decoração de festas" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary mb-2">Festas e Eventos</h3>
+                        <p class="text-gray-700">Personalizamos nossos pães de mel para suas festas e eventos especiais.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Price List Section -->
+    <section id="precos" class="py-16">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Tabela de Valores</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
+                <!-- Left Column: Prices by Size -->
+                <div class="lg:col-span-3">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                        <!-- Card 3x3 CM -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-secondary text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-4">3X3 CM</h3>
+                            <p class="mb-4"><span class="text-5xl font-bold text-primary">R$4</span><span class="text-gray-600">/un.</span></p>
+                            <ul class="space-y-3">
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,73</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 40 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,55</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 80 un.</span></li>
+                            </ul>
+                        </div>
+                        <!-- Card 5x5 CM -->
+                        <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-secondary text-center">
+                            <h3 class="text-2xl font-bold text-primary mb-4">5X5 CM</h3>
+                            <p class="mb-4"><span class="text-5xl font-bold text-primary">R$6</span><span class="text-gray-600">/un.</span></p>
+                            <ul class="space-y-3">
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 5,60</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 40 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 5,33</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 80 un.</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="text-center mt-8">
+                        <p class="font-bold text-gray-700">ENCOMENDA MÍNIMA: 20 UNIDADES</p>
+                        <p class="text-sm text-gray-500 mt-2">*Por se tratar de um produto artesanal, o tamanho pode sofrer pequenas variações.</p>
+                    </div>
+                </div>
+
+                <!-- Right Column: Packaging -->
+                <div class="lg:col-span-2 bg-white rounded-lg shadow-lg p-8">
+                    <h3 class="text-2xl font-bold text-primary mb-6 text-center">Embalagens e Personalizações</h3>
+                    <div class="space-y-5">
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <div>
+                                <h4 class="font-bold text-lg text-primary">BÁSICO</h4>
+                                <p class="text-gray-600 text-sm">Plástico Filme + Celofane</p>
+                            </div>
+                            <p class="font-semibold text-gray-700 whitespace-nowrap">(sem acréscimo)</p>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <div>
+                                <h4 class="font-bold text-lg text-primary">PREMIUM</h4>
+                                <p class="text-gray-600 text-sm">Plástico Filme + Celofane + Fita Cetim</p>
+                            </div>
+                            <p class="font-bold text-primary whitespace-nowrap">+ R$ 0,35 un.</p>
+                        </div>
+                        <div class="flex justify-between items-center border-b pb-3">
+                            <div>
+                                <h4 class="font-bold text-lg text-primary">PLUS</h4>
+                                <p class="text-gray-600 text-sm">Plástico Filme + Fita Cetim + Crepom</p>
+                            </div>
+                            <p class="font-bold text-primary whitespace-nowrap">+ R$ 0,55 un.</p>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-lg text-primary">PERSONALIZAÇÃO DE ADESIVO</h4>
+                            <p class="text-gray-600 font-bold">+ R$ 0,25 un.</p>
+                            <p class="text-gray-500 text-sm mt-1">Sem acréscimos para pedidos acima de 80 unidades.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+     <!-- Gallery Section -->
+    <section id="galeria" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary mb-12">Galeria</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <img src="src/6D0AE78B-6F7A-49F1-98A2-0FFED3A0AED9.png" alt="Imagem de uma caixa de presente com pães de mel" class="rounded-lg shadow-md aspect-square object-cover">
+                <img src="src/B4C7A6F5-4FA7-4CBF-88BD-DED72AE3FB04.png" alt="Imagem de vários pães de mel em uma caixa" class="rounded-lg shadow-md aspect-square object-cover">
+                <img src="src/7234DBD7-A3F4-42B2-A2AB-D58720325C14.png" alt="Imagem de pão de mel com laço vermelho" class="rounded-lg shadow-md aspect-square object-cover">
+                <img src="src/F1C65732-139F-41FC-9DEA-3F0C75EE8C40.png" alt="Imagem de uma embalagem de presente com laço vermelho" class="rounded-lg shadow-md aspect-square object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-16 bg-primary">
+        <div class="container mx-auto px-6 text-center text-white">
+            <h2 class="text-3xl font-bold mb-8">Faça sua Encomenda!</h2>
+            <p class="text-lg mb-4">Entre em contato conosco e faça seu pedido. Será um prazer te atender!</p>
+            <div class="flex justify-center items-center space-x-6">
+                <a href="https://www.instagram.com/lomel.lomel/" target="_blank" class="flex items-center space-x-2 text-white hover:text-secondary">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/instagram-new.png" alt="Instagram Icon" class="h-8 w-8">
+                    <span class="text-lg">@lomel.lomel</span>
+                </a>
+                <a href="https://wa.me/5538991932520" target="_blank" class="flex items-center space-x-2 text-white hover:text-secondary">
+                    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp Icon" class="h-8 w-8">
+                    <span class="text-lg">(38) 9 9193-2520</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-6 bg-gray-800 text-white text-center">
+        <p>&copy; 2025 Lô Mel - Pão de Mel Artesanal. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
+
