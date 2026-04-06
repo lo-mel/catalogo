@@ -220,23 +220,32 @@
                                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
                                         <label class="flex items-center gap-2">
                                             <input type="radio" name="acabamento" value="nenhum" class="text-secondary" checked>
-                                            <span>Nenhum</span>
+                                            <span>Básico</span>
                                         </label>
-                                        <label class="flex items-center gap-2">
-                                            <input type="radio" name="acabamento" value="premium" class="text-secondary">
-                                            <span>Premium (+ R$ 0,35/un)</span>
+                                        <label class="flex items-start gap-2">
+                                            <input type="radio" name="acabamento" value="premium" class="text-secondary mt-1">
+                                            <span class="flex flex-col">
+                                                <span>Premium (+ R$ 0,35/un)</span>
+                                                <span class="text-xs text-gray-500">Adição de fita de cetim sobre o celofane</span>
+                                            </span>
                                         </label>
-                                        <label class="flex items-center gap-2">
-                                            <input type="radio" name="acabamento" value="plus" class="text-secondary">
-                                            <span>Plus (+ R$ 0,55/un)</span>
+                                        <label class="flex items-start gap-2">
+                                            <input type="radio" name="acabamento" value="plus" class="text-secondary mt-1">
+                                            <span class="flex flex-col">
+                                                <span>Plus (+ R$ 0,55/un)</span>
+                                                <span class="text-xs text-gray-500">Substituição do celofane por papel crepom + fita de cetim</span>
+                                            </span>
                                         </label>
                                     </div>
 
                                     <div class="mt-4">
                                         <p class="text-sm font-semibold text-gray-700 mb-2">Adesivo</p>
-                                        <label class="flex items-center gap-2 text-sm">
-                                            <input id="sticker-checkbox" type="checkbox" class="text-secondary">
-                                            <span>Adesivo (+ R$ 0,30/un)</span>
+                                        <label class="flex items-start gap-2 text-sm">
+                                            <input id="sticker-checkbox" type="checkbox" class="text-secondary mt-1">
+                                            <span class="flex flex-col">
+                                                <span>Adesivo (+ R$ 0,30/un)</span>
+                                                <span class="text-xs text-gray-500">Adesivo personalizado</span>
+                                            </span>
                                         </label>
                                         <p id="sticker-warning" class="mt-2 text-xs text-gray-500 hidden">
                                             Opção disponível apenas para pedidos a partir de 80 unidades
@@ -567,7 +576,7 @@
             );
 
             const finishingLabelMap = {
-                nenhum: "Nenhum",
+                nenhum: "Básico",
                 premium: "Premium",
                 plus: "Plus"
             };
