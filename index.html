@@ -5,38 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lô Mel - Pão de Mel Artesanal</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             background-color: #FDFBF8; /* Um off-white suave */
         }
         /* Cor principal extraída da nova logo */
-        .bg-primary { background-color: #6a2a1a; } 
+        .bg-primary { background-color: #6a2a1a; }
         .text-primary { color: #6a2a1a; }
         .border-primary { border-color: #6a2a1a; }
         .hover-bg-primary-dark:hover { background-color: #582316; } /* Tom mais escuro para hover */
-        
+
         .bg-secondary { background-color: #FFD700; } /* Amarelo Ouro mantido */
         .text-secondary { color: #FFD700; }
         .border-secondary { border-color: #FFD700; }
+
+        .logo-mark {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 0.12em;
+        }
+        .logo-icon {
+            width: 36px;
+            height: 36px;
+        }
     </style>
 </head>
 <body>
 
     <!-- Header -->
-    <header class="bg-primary shadow-md sticky top-0 z-10">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
-            <div class="flex items-center">
-                 <!-- Logo agora é circular, com borda e mais integrada -->
-                 <img src="src/37A6C345-B1B7-42BC-A7E5-2B4FF8DE2478.jpg" alt="Logo da Lô Mel" class="h-24 w-24 rounded-full object-cover border-4 border-secondary shadow-lg">
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-8 py-4 flex justify-between items-center">
+            <div class="logo-mark">
+                <span class="logo-text text-primary text-xl">LÔ MEL</span>
             </div>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#produtos" class="text-white text-lg hover:text-secondary font-semibold">Produtos</a>
-                <a href="#precos" class="text-white text-lg hover:text-secondary font-semibold">Preços</a>
-                <a href="#contato" class="text-white text-lg hover:text-secondary font-semibold">Contato</a>
-            </nav>
-            <button class="md:hidden text-white">
+            <div class="hidden md:flex items-center gap-8">
+                <nav class="flex items-center space-x-8">
+                    <a href="#produtos" class="text-primary text-base font-semibold hover:text-secondary transition">Produtos</a>
+                    <a href="#precos" class="text-primary text-base font-semibold hover:text-secondary transition">Preços</a>
+                    <a href="#contato" class="text-primary text-base font-semibold hover:text-secondary transition">Contato</a>
+                </nav>
+                <a href="#pedido" class="bg-secondary text-primary font-bold py-2 px-5 rounded-full hover-bg-primary-dark hover:text-white transition duration-300">Encomendar</a>
+            </div>
+            <button class="md:hidden text-primary">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
                 </svg>
@@ -48,7 +64,7 @@
     <section class="container mx-auto px-6 py-16 text-center">
         <h2 class="text-4xl font-bold text-primary mb-4">Pães de mel artesanais, feitos para encantar em cada detalhe.</h2>
         <p class="text-gray-600 text-xl mb-8">Produzido com ingredientes 100% naturais, ideal para presentear ou celebrar momentos especiais.</p>
-        <a href="#contato" class="bg-secondary text-primary font-bold py-3 px-8 rounded-full text-lg hover-bg-primary-dark hover:text-white transition duration-300">Faça sua Encomenda</a>
+        <a href="#pedido" class="bg-secondary text-primary font-bold py-3 px-8 rounded-full text-lg hover-bg-primary-dark hover:text-white transition duration-300">Faça sua Encomenda</a>
     </section>
 
     <!-- Products Section -->
@@ -95,19 +111,21 @@
                         <!-- Card 3x3 CM -->
                         <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-secondary text-center">
                             <h3 class="text-2xl font-bold text-primary mb-4">3X3 CM</h3>
-                            <p class="mb-4"><span class="text-5xl font-bold text-primary">R$4</span><span class="text-gray-600">/un.</span></p>
+                            <p class="mb-4"><span class="text-5xl font-bold text-primary">R$ 3,60</span><span class="text-gray-600">/un.</span></p>
                             <ul class="space-y-3">
-                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,73</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 40 un.</span></li>
-                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,55</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 80 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,60</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">20 a 40 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,36</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">41 a 80 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,20</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">Acima de 80 un.</span></li>
                             </ul>
                         </div>
                         <!-- Card 5x5 CM -->
                         <div class="bg-white rounded-lg shadow-lg p-6 border-t-4 border-secondary text-center">
                             <h3 class="text-2xl font-bold text-primary mb-4">5X5 CM</h3>
-                            <p class="mb-4"><span class="text-5xl font-bold text-primary">R$6</span><span class="text-gray-600">/un.</span></p>
+                            <p class="mb-4"><span class="text-5xl font-bold text-primary">R$ 6,00</span><span class="text-gray-600">/un.</span></p>
                             <ul class="space-y-3">
-                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 5,60</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 40 un.</span></li>
-                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 5,33</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 80 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 6,00</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">20 a 40 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 5,60</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">41 a 80 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 5,33</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">Acima de 80 un.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -144,15 +162,155 @@
                         </div>
                         <div>
                             <h4 class="font-bold text-lg text-primary">PERSONALIZAÇÃO DE ADESIVO</h4>
-                            <p class="text-gray-600 font-bold">+ R$ 0,25 un.</p>
-                            <p class="text-gray-500 text-sm mt-1">Sem acréscimos para pedidos acima de 80 unidades.</p>
+                            <p class="text-gray-600 font-bold">+ R$ 0,30 un.</p>
+                            <p class="text-gray-500 text-sm mt-1">Opção disponível apenas para pedidos a partir de 80 unidades.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    
+
+    <!-- Order Simulator Section -->
+    <section id="pedido" class="py-16 bg-white">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-primary mb-8">Monte seu Pedido</h2>
+            <p class="text-center text-gray-600 mb-10">Monte seu pedido e consulte a disponibilidade via WhatsApp.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
+                <!-- Left: Items, Delivery, Personalization -->
+                <div class="lg:col-span-2 space-y-8">
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <h3 class="text-xl font-bold text-primary mb-4">Itens</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="qty-small" class="block text-sm font-semibold text-gray-700">Pão de Mel Pequeno (3x3)</label>
+                                <input id="qty-small" type="number" min="0" step="1" value="0" class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <p class="mt-2 text-sm text-gray-500" id="price-small">Preço unitário: R$ 0,00</p>
+                            </div>
+                            <div>
+                                <label for="qty-large" class="block text-sm font-semibold text-gray-700">Pão de Mel Grande (5x5)</label>
+                                <input id="qty-large" type="number" min="0" step="1" value="0" class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                                <p class="mt-2 text-sm text-gray-500" id="price-large">Preço unitário: R$ 0,00</p>
+                            </div>
+                        </div>
+                        <p class="mt-4 text-sm text-gray-600">Mínimo para envio: 20 unidades no total.</p>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <h3 class="text-xl font-bold text-primary mb-4">Personalização</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="md:col-span-2">
+                                <p class="block text-sm font-semibold text-gray-700 mb-2">Personalizar:</p>
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="personalizar" value="sim" class="text-secondary">
+                                        <span>Sim</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="personalizar" value="nao" class="text-secondary" checked>
+                                        <span>Não</span>
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="md:col-span-2 hidden" id="customization-section">
+                                <div class="mt-2 rounded-lg border border-gray-200 bg-white p-4">
+                                    <p class="text-sm font-semibold text-gray-700 mb-3">Acabamento</p>
+                                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-sm">
+                                        <label class="flex items-center gap-2">
+                                            <input type="radio" name="acabamento" value="nenhum" class="text-secondary" checked>
+                                            <span>Nenhum</span>
+                                        </label>
+                                        <label class="flex items-center gap-2">
+                                            <input type="radio" name="acabamento" value="premium" class="text-secondary">
+                                            <span>Premium (+ R$ 0,35/un)</span>
+                                        </label>
+                                        <label class="flex items-center gap-2">
+                                            <input type="radio" name="acabamento" value="plus" class="text-secondary">
+                                            <span>Plus (+ R$ 0,55/un)</span>
+                                        </label>
+                                    </div>
+
+                                    <div class="mt-4">
+                                        <p class="text-sm font-semibold text-gray-700 mb-2">Adesivo</p>
+                                        <label class="flex items-center gap-2 text-sm">
+                                            <input id="sticker-checkbox" type="checkbox" class="text-secondary">
+                                            <span>Adesivo (+ R$ 0,30/un)</span>
+                                        </label>
+                                        <p id="sticker-warning" class="mt-2 text-xs text-gray-500 hidden">
+                                            Opção disponível apenas para pedidos a partir de 80 unidades
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                        <h3 class="text-xl font-bold text-primary mb-4">Entrega</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="md:col-span-2">
+                                <label for="customer-name" class="block text-sm font-semibold text-gray-700">Nome completo</label>
+                                <input id="customer-name" type="text" class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Digite seu nome">
+                            </div>
+
+                            <div class="md:col-span-2">
+                                <p class="block text-sm font-semibold text-gray-700 mb-2">Opções de Entrega</p>
+                                <div class="flex flex-col sm:flex-row gap-4">
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="logistica" value="retirada" class="text-secondary">
+                                        <span>Retirada</span>
+                                    </label>
+                                    <label class="flex items-center gap-2">
+                                        <input type="radio" name="logistica" value="entrega" class="text-secondary">
+                                        <span>Entrega</span>
+                                    </label>
+                                </div>
+                                <p class="mt-3 text-sm text-gray-600 hidden" id="pickup-address">Rua Urânio, 32, Bairro de Lourdes</p>
+                                <p class="mt-1 text-sm text-gray-600 hidden" id="delivery-fee-note">Entrega com taxa fixa de R$ 7,00. Apenas Montes Claros.</p>
+                            </div>
+
+                            <div class="md:col-span-2 hidden" id="delivery-fields">
+                                <label for="delivery-address" class="block text-sm font-semibold text-gray-700">Endereço de Entrega (Montes Claros)</label>
+                                <input id="delivery-address" type="text" class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary" placeholder="Rua, numero, bairro, complemento">
+                            </div>
+
+                            <div>
+                                <label for="schedule-date" class="block text-sm font-semibold text-gray-700">Data</label>
+                                <input id="schedule-date" type="date" class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                            </div>
+                            <div>
+                                <label for="schedule-time" class="block text-sm font-semibold text-gray-700">Hora</label>
+                                <input id="schedule-time" type="time" class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Summary -->
+                <div class="bg-primary text-white rounded-lg p-6 shadow-lg">
+                    <h3 class="text-xl font-bold mb-4">Resumo Financeiro</h3>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between"><span>Subtotal</span><span id="summary-subtotal">R$ 0,00</span></div>
+                        <div class="flex justify-between"><span>Entrada (50%)</span><span id="summary-sinal">R$ 0,00</span></div>
+                        <div class="flex justify-between"><span>Entrega</span><span id="summary-entrega">R$ 0,00</span></div>
+                        <div class="border-t border-white/40 pt-3 flex justify-between font-semibold"><span>Restante</span><span id="summary-restante">R$ 0,00</span></div>
+                    </div>
+
+                    <p class="mt-6 text-sm text-secondary font-semibold" id="availability-warning">
+                        A confirmação do pedido depende de disponibilidade em nossa agenda. O pedido só será iniciado após confirmação via WhatsApp e pagamento da entrada de 50%.
+                    </p>
+
+                    <button id="whatsapp-button" class="mt-6 w-full bg-secondary text-primary font-bold py-3 px-6 rounded-full hover-bg-primary-dark hover:text-white transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>
+                        Consultar Disponibilidade via WhatsApp
+                    </button>
+                    <p id="validation-message" class="mt-3 text-sm text-white/80"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
      <!-- Gallery Section -->
     <section id="galeria" class="py-16 bg-white">
         <div class="container mx-auto px-6">
@@ -186,9 +344,330 @@
 
     <!-- Footer -->
     <footer class="py-6 bg-gray-800 text-white text-center">
-        <p>&copy; 2025 Lô Mel - Pão de Mel Artesanal. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Lô Mel - Pão de Mel Artesanal. Todos os direitos reservados.</p>
     </footer>
+
+    <script>
+        const PRICING = {
+            small: { tier1: 3.6, tier2: 3.36, tier3: 3.2 },
+            large: { tier1: 6.0, tier2: 5.6, tier3: 5.33 }
+        };
+        const MIN_TOTAL_QTY = 20;
+        const DELIVERY_FEE = 7.0;
+        const PICKUP_ADDRESS = "Rua Urânio, 32, Bairro de Lourdes";
+        const WHATSAPP_NUMBER = "5538991932520";
+
+        const FINISHING_PRICES = { nenhum: 0, premium: 0.35, plus: 0.55 };
+        const STICKER_PRICE = 0.3;
+
+        const qtySmallInput = document.getElementById("qty-small");
+        const qtyLargeInput = document.getElementById("qty-large");
+        const priceSmallLabel = document.getElementById("price-small");
+        const priceLargeLabel = document.getElementById("price-large");
+        const customerNameInput = document.getElementById("customer-name");
+        const deliveryFields = document.getElementById("delivery-fields");
+        const pickupAddress = document.getElementById("pickup-address");
+        const deliveryFeeNote = document.getElementById("delivery-fee-note");
+        const deliveryAddressInput = document.getElementById("delivery-address");
+        const scheduleDateInput = document.getElementById("schedule-date");
+        const scheduleTimeInput = document.getElementById("schedule-time");
+
+        const customizationSection = document.getElementById("customization-section");
+        const stickerCheckbox = document.getElementById("sticker-checkbox");
+        const stickerWarning = document.getElementById("sticker-warning");
+
+        const summarySubtotal = document.getElementById("summary-subtotal");
+        const summarySinal = document.getElementById("summary-sinal");
+        const summaryEntrega = document.getElementById("summary-entrega");
+        const summaryRestante = document.getElementById("summary-restante");
+        const whatsappButton = document.getElementById("whatsapp-button");
+        const validationMessage = document.getElementById("validation-message");
+
+        const currencyFormatter = new Intl.NumberFormat("pt-BR", {
+            style: "currency",
+            currency: "BRL"
+        });
+
+        function getSelectedLogistics() {
+            const selected = document.querySelector("input[name='logistica']:checked");
+            return selected ? selected.value : "";
+        }
+
+        function getUnitPriceByQty(qty, tiers) {
+            if (qty <= 0) {
+                return 0;
+            }
+            if (qty <= 40) {
+                return tiers.tier1;
+            }
+            if (qty <= 80) {
+                return tiers.tier2;
+            }
+            return tiers.tier3;
+        }
+
+        function formatCurrency(value) {
+            return currencyFormatter.format(value);
+        }
+
+        function parseQty(value) {
+            const qty = parseInt(value, 10);
+            return Number.isNaN(qty) ? 0 : Math.max(qty, 0);
+        }
+
+        function isCustomizationEnabled() {
+            const selected = document.querySelector("input[name='personalizar']:checked");
+            return selected ? selected.value === "sim" : false;
+        }
+
+        function getSelectedFinishing() {
+            if (!isCustomizationEnabled()) {
+                return "nenhum";
+            }
+            const selected = document.querySelector("input[name='acabamento']:checked");
+            return selected ? selected.value : "nenhum";
+        }
+
+        function isStickerSelected() {
+            if (!isCustomizationEnabled()) {
+                return false;
+            }
+            return stickerCheckbox.checked;
+        }
+
+        function getAddonUnitPrice(totalQty) {
+            if (!isCustomizationEnabled()) {
+                return 0;
+            }
+            const finishing = getSelectedFinishing();
+            const finishingPrice = FINISHING_PRICES[finishing] ?? 0;
+            const stickerAllowed = totalQty >= 80;
+            const stickerPrice = stickerAllowed && isStickerSelected() ? STICKER_PRICE : 0;
+            return finishingPrice + stickerPrice;
+        }
+
+        function formatScheduleDateTime(dateValue, timeValue) {
+            if (!dateValue || !timeValue) {
+                return `${dateValue} ${timeValue}`.trim();
+            }
+
+            const [year, month, day] = dateValue.split("-").map(Number);
+            const [hours, minutes] = timeValue.split(":").map(Number);
+            const scheduleDate = new Date(year, month - 1, day, hours, minutes);
+
+            const dateText = scheduleDate.toLocaleDateString("pt-BR");
+            const timeText = scheduleDate.toLocaleTimeString("pt-BR", {
+                hour: "2-digit",
+                minute: "2-digit"
+            });
+
+            return `${dateText} às ${timeText}`;
+        }
+
+        function updatePricing() {
+            const qtySmall = parseQty(qtySmallInput.value);
+            const qtyLarge = parseQty(qtyLargeInput.value);
+            const totalQty = qtySmall + qtyLarge;
+
+            const addonUnitPrice = getAddonUnitPrice(totalQty);
+            const unitPriceSmall = getUnitPriceByQty(qtySmall, PRICING.small) + addonUnitPrice;
+            const unitPriceLarge = getUnitPriceByQty(qtyLarge, PRICING.large) + addonUnitPrice;
+
+            const stickerAllowed = totalQty >= 80;
+            const customizationEnabled = isCustomizationEnabled();
+            stickerCheckbox.disabled = !customizationEnabled || !stickerAllowed;
+            if (stickerCheckbox.disabled) {
+                stickerCheckbox.checked = false;
+            }
+            stickerWarning.classList.toggle("hidden", !(customizationEnabled && !stickerAllowed));
+
+            priceSmallLabel.textContent = `Preço unitário: ${formatCurrency(unitPriceSmall)}`;
+            priceLargeLabel.textContent = `Preço unitário: ${formatCurrency(unitPriceLarge)}`;
+
+            const subtotal = qtySmall * unitPriceSmall + qtyLarge * unitPriceLarge;
+            const sinal = subtotal * 0.5;
+            const logistics = getSelectedLogistics();
+            const entrega = logistics === "entrega" ? DELIVERY_FEE : 0;
+            const restante = subtotal - sinal + entrega;
+
+            summarySubtotal.textContent = formatCurrency(subtotal);
+            summarySinal.textContent = formatCurrency(sinal);
+            summaryEntrega.textContent = formatCurrency(entrega);
+            summaryRestante.textContent = formatCurrency(restante);
+
+            updateValidation(subtotal, totalQty, logistics, entrega);
+        }
+
+        function updateValidation(subtotal, totalQty, logistics, entrega) {
+            let message = "";
+            let isValid = true;
+
+            if (totalQty < MIN_TOTAL_QTY) {
+                isValid = false;
+                message = `Adicione pelo menos ${MIN_TOTAL_QTY} unidades para continuar.`;
+            }
+
+            if (!customerNameInput.value.trim()) {
+                isValid = false;
+                message = message || "Informe seu nome completo.";
+            }
+
+            if (!logistics) {
+                isValid = false;
+                message = message || "Selecione retirada ou entrega.";
+            }
+
+            if (logistics === "entrega" && !deliveryAddressInput.value.trim()) {
+                isValid = false;
+                message = message || "Informe o endereço completo para entrega.";
+            }
+
+            if (!scheduleDateInput.value || !scheduleTimeInput.value) {
+                isValid = false;
+                message = message || "Informe data e hora desejadas.";
+            }
+
+            if (subtotal <= 0) {
+                isValid = false;
+                message = message || "Adicione itens ao carrinho.";
+            }
+
+            whatsappButton.disabled = !isValid;
+            validationMessage.textContent = message;
+            summaryEntrega.textContent = formatCurrency(entrega);
+        }
+
+        function buildWhatsappMessage() {
+            const qtySmall = parseQty(qtySmallInput.value);
+            const qtyLarge = parseQty(qtyLargeInput.value);
+            const totalQty = qtySmall + qtyLarge;
+
+            const addonUnitPrice = getAddonUnitPrice(totalQty);
+            const unitPriceSmall = getUnitPriceByQty(qtySmall, PRICING.small) + addonUnitPrice;
+            const unitPriceLarge = getUnitPriceByQty(qtyLarge, PRICING.large) + addonUnitPrice;
+
+            const subtotal = qtySmall * unitPriceSmall + qtyLarge * unitPriceLarge;
+            const sinal = subtotal * 0.5;
+            const logistics = getSelectedLogistics();
+            const entrega = logistics === "entrega" ? DELIVERY_FEE : 0;
+            const restante = subtotal - sinal + entrega;
+
+            const items = [];
+            if (qtySmall > 0) {
+                items.push(`- Pão de Mel Pequeno (3x3): ${qtySmall} un. x ${formatCurrency(unitPriceSmall)} = ${formatCurrency(qtySmall * unitPriceSmall)}`);
+            }
+            if (qtyLarge > 0) {
+                items.push(`- Pão de Mel Grande (5x5): ${qtyLarge} un. x ${formatCurrency(unitPriceLarge)} = ${formatCurrency(qtyLarge * unitPriceLarge)}`);
+            }
+
+            const logisticsLabel = logistics === "entrega" ? "Entrega" : "Retirada";
+            const scheduleText = formatScheduleDateTime(
+                scheduleDateInput.value,
+                scheduleTimeInput.value
+            );
+
+            const finishingLabelMap = {
+                nenhum: "Nenhum",
+                premium: "Premium",
+                plus: "Plus"
+            };
+            const finishingLabel = finishingLabelMap[getSelectedFinishing()] ?? "Nenhum";
+            const stickerLabel = isStickerSelected() ? "Sim" : "Não";
+
+            const addressLine = logistics === "entrega"
+                ? `*Endereço:* ${deliveryAddressInput.value.trim()}`
+                : null;
+
+            const lines = [
+                "Olá! Gostaria de consultar disponibilidade para este pedido:",
+                "",
+                `*Nome:* ${customerNameInput.value.trim()}`,
+                `*Tipo:* ${logisticsLabel}`,
+                addressLine,
+                `*Data/Hora:* ${scheduleText}`,
+                "",
+                `*Acabamento escolhido:* ${finishingLabel}`,
+                `*Personalização com adesivo:* ${stickerLabel}`,
+                "",
+                "*Itens:*",
+                ...items.map((line) => `* ${line.slice(2)}`),
+                "",
+                "*Resumo financeiro:*",
+                `*Subtotal:* ${formatCurrency(subtotal)}`,
+                `*Entrada (50%):* ${formatCurrency(sinal)}`,
+                `*Entrega:* ${formatCurrency(entrega)}`,
+                `*Restante:* ${formatCurrency(restante)}`
+            ].filter((line) => line !== null);
+
+            return lines.join("\n");
+        }
+
+        function toggleDeliveryFields() {
+            const logistics = getSelectedLogistics();
+            if (logistics === "entrega") {
+                deliveryFields.classList.remove("hidden");
+                deliveryFeeNote.classList.remove("hidden");
+                pickupAddress.classList.add("hidden");
+            } else {
+                deliveryFields.classList.add("hidden");
+                deliveryAddressInput.value = "";
+                deliveryFeeNote.classList.add("hidden");
+                pickupAddress.classList.toggle("hidden", logistics !== "retirada");
+            }
+            updatePricing();
+        }
+
+        function toggleCustomizationSection() {
+            const enabled = isCustomizationEnabled();
+            customizationSection.classList.toggle("hidden", !enabled);
+
+            if (!enabled) {
+                const noneFinishing = document.querySelector("input[name='acabamento'][value='nenhum']");
+                if (noneFinishing) {
+                    noneFinishing.checked = true;
+                }
+                stickerCheckbox.checked = false;
+            }
+
+            stickerWarning.classList.toggle("hidden", true);
+            updatePricing();
+        }
+
+        function handleWhatsappClick() {
+            const message = buildWhatsappMessage();
+            const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+            window.open(url, "_blank");
+        }
+
+        document.querySelectorAll("input[name='logistica']").forEach((input) => {
+            input.addEventListener("change", toggleDeliveryFields);
+        });
+
+        document.querySelectorAll("input[name='personalizar']").forEach((input) => {
+            input.addEventListener("change", toggleCustomizationSection);
+        });
+
+        document.querySelectorAll("input[name='acabamento']").forEach((input) => {
+            input.addEventListener("change", updatePricing);
+        });
+
+        [
+            qtySmallInput,
+            qtyLargeInput,
+            customerNameInput,
+            deliveryAddressInput,
+            scheduleDateInput,
+            scheduleTimeInput,
+            stickerCheckbox
+        ].forEach((input) => {
+            input.addEventListener("input", updatePricing);
+        });
+
+        whatsappButton.addEventListener("click", handleWhatsappClick);
+
+        toggleCustomizationSection();
+        updatePricing();
+    </script>
 
 </body>
 </html>
-
