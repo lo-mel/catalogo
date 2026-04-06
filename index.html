@@ -113,9 +113,8 @@
                             <h3 class="text-2xl font-bold text-primary mb-4">3X3 CM</h3>
                             <p class="mb-4"><span class="text-5xl font-bold text-primary">R$ 3,60</span><span class="text-gray-600">/un.</span></p>
                             <ul class="space-y-3">
-                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,60</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">20 a 40 un.</span></li>
-                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,36</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">41 a 80 un.</span></li>
-                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,20</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">Acima de 80 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,36</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 40 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 3,20</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 80 un.</span></li>
                             </ul>
                         </div>
                         <!-- Card 5x5 CM -->
@@ -123,9 +122,8 @@
                             <h3 class="text-2xl font-bold text-primary mb-4">5X5 CM</h3>
                             <p class="mb-4"><span class="text-5xl font-bold text-primary">R$ 6,00</span><span class="text-gray-600">/un.</span></p>
                             <ul class="space-y-3">
-                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 6,00</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">20 a 40 un.</span></li>
-                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 5,60</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">41 a 80 un.</span></li>
-                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 5,33</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">Acima de 80 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 5,60</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 40 un.</span></li>
+                                <li class="bg-gray-50 p-3 rounded-lg"><span class="font-bold text-primary text-lg">R$ 5,33</span><span class="text-gray-600"> un.</span><br><span class="text-sm text-gray-500">A partir de 80 un.</span></li>
                             </ul>
                         </div>
                     </div>
@@ -184,17 +182,17 @@
                         <h3 class="text-xl font-bold text-primary mb-4">Itens</h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                             <div>
-                                <label for="qty-small" class="block text-sm font-semibold text-gray-700">Pão de Mel Pequeno (3x3)</label>
+                                <label for="qty-small" class="block text-sm font-semibold text-gray-700">Pão de Mel Pequeno (3x3 cm)</label>
                                 <input id="qty-small" type="number" min="0" step="1" value="0" class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
                                 <p class="mt-2 text-sm text-gray-500" id="price-small">Preço unitário: R$ 0,00</p>
                             </div>
                             <div>
-                                <label for="qty-large" class="block text-sm font-semibold text-gray-700">Pão de Mel Grande (5x5)</label>
+                                <label for="qty-large" class="block text-sm font-semibold text-gray-700">Pão de Mel Grande (5x5 cm)</label>
                                 <input id="qty-large" type="number" min="0" step="1" value="0" class="mt-2 w-full rounded-lg border border-gray-300 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-secondary">
                                 <p class="mt-2 text-sm text-gray-500" id="price-large">Preço unitário: R$ 0,00</p>
                             </div>
                         </div>
-                        <p class="mt-4 text-sm text-gray-600">Mínimo para envio: 20 unidades no total.</p>
+                        <p class="mt-4 text-sm text-gray-600">Mínimo para encomenda: 20 unidades no total.</p>
                     </div>
 
                     <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
@@ -402,17 +400,17 @@
             return selected ? selected.value : "";
         }
 
-        function getUnitPriceByQty(qty, tiers) {
-            if (qty <= 0) {
-                return 0;
-            }
-            if (qty <= 40) {
+        function getUnitPriceByQty(totalQty, tiers) {
+            if (totalQty >= 20 && totalQty < 40) {
                 return tiers.tier1;
             }
-            if (qty <= 80) {
+            if (totalQty >= 40 && totalQty < 80) {
                 return tiers.tier2;
             }
-            return tiers.tier3;
+            if (totalQty >= 80) {
+                return tiers.tier3;
+            }
+            return 0;
         }
 
         function formatCurrency(value) {
@@ -479,8 +477,8 @@
             const totalQty = qtySmall + qtyLarge;
 
             const addonUnitPrice = getAddonUnitPrice(totalQty);
-            const unitPriceSmall = getUnitPriceByQty(qtySmall, PRICING.small) + addonUnitPrice;
-            const unitPriceLarge = getUnitPriceByQty(qtyLarge, PRICING.large) + addonUnitPrice;
+            const unitPriceSmall = getUnitPriceByQty(totalQty, PRICING.small) + addonUnitPrice;
+            const unitPriceLarge = getUnitPriceByQty(totalQty, PRICING.large) + addonUnitPrice;
 
             const stickerAllowed = totalQty >= 80;
             const customizationEnabled = isCustomizationEnabled();
@@ -552,8 +550,8 @@
             const totalQty = qtySmall + qtyLarge;
 
             const addonUnitPrice = getAddonUnitPrice(totalQty);
-            const unitPriceSmall = getUnitPriceByQty(qtySmall, PRICING.small) + addonUnitPrice;
-            const unitPriceLarge = getUnitPriceByQty(qtyLarge, PRICING.large) + addonUnitPrice;
+            const unitPriceSmall = getUnitPriceByQty(totalQty, PRICING.small) + addonUnitPrice;
+            const unitPriceLarge = getUnitPriceByQty(totalQty, PRICING.large) + addonUnitPrice;
 
             const subtotal = qtySmall * unitPriceSmall + qtyLarge * unitPriceLarge;
             const sinal = subtotal * 0.5;
